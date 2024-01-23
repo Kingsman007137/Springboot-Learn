@@ -1,5 +1,6 @@
 package com.example.controller;
 
+import com.example.pojo.Emp;
 import com.example.pojo.PageBean;
 import com.example.pojo.Result;
 import com.example.service.EmpService;
@@ -34,6 +35,27 @@ public class EmpController {
     public Result delete(@PathVariable List<Integer> ids) {
         log.info("批量删除，参数：{}", ids);
         empService.delete(ids);
+        return Result.success();
+    }
+
+    @PostMapping
+    public Result save(@RequestBody Emp emp) {
+        log.info("新增员工，参数：{}", emp);
+        empService.save(emp);
+        return Result.success();
+    }
+
+    @GetMapping("{id}")
+    public Result getById(@PathVariable Integer id) {
+        log.info("根据id查询员工：{}", id);
+        Emp emp = empService.getById(id);
+        return Result.success(emp);
+    }
+
+    @PutMapping
+    public Result update(@RequestBody Emp emp) {
+        log.info("更新员工：{}", emp);
+        empService.update(emp);
         return Result.success();
     }
 }

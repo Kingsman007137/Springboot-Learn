@@ -1,5 +1,6 @@
 package com.example.service;
 
+import com.example.pojo.Emp;
 import com.example.pojo.PageBean;
 
 import java.time.LocalDate;
@@ -18,4 +19,23 @@ public interface EmpService {
      * @param ids
      */
     void delete(List<Integer> ids);
+
+    /**
+     * 新增员工
+     * @param emp
+     */
+    void save(Emp emp);
+
+    /**
+     * 根据id查询员工
+     * @param id
+     * @return
+     */
+    Emp getById(Integer id);
+
+    /**
+     * 更新员工
+     * @param emp
+     */
+    void update(Emp emp);
 }
