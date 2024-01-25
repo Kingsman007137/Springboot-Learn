@@ -22,6 +22,7 @@ public class DeptServiceImpl implements DeptService {
     @Autowired
     private DeptLogService deptLogService;
 
+    //@MyCom
     @Override
     public List<Dept> list() {
         return deptMapper.list();
@@ -33,7 +34,7 @@ public class DeptServiceImpl implements DeptService {
         try {
             deptMapper.delete(id);
             //模拟异常
-            int i = 1/0;
+            //int i = 1/0;
             //部门下的员工也要删除
             empMapper.deleteByDeptId(id);
         } finally {
