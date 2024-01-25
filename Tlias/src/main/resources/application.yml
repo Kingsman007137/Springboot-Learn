@@ -24,3 +24,8 @@ aliyun:
   oss:
     endpoint: https://oss-cn-guangzhou.aliyuncs.com
     bucketName: tlias-kingsman
+
+#spring事务管理日志
+logging:
+  level:
+    org.springframework.jdbc.support.JdbcTransactionManager: debug
